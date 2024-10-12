@@ -38,7 +38,7 @@
             methods: {
                 async handle_submit_login()
                 {
-                    const promise = await fetch('http://localhost:5000/login', {
+                    const promise = await fetch('https://app-final-gu6f.onrender.com', {
                         method: 'POST',
                         body: new URLSearchParams({
                             usuario: this.usuario,
