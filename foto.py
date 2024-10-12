@@ -7,7 +7,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.http import MediaFileUpload
 
 app = Flask(__name__)
-Ftoken = "C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\Ftoken.json"
+Ftoken = "Ftoken.json"
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 def upload_to_drive(file_path):
     creds = None
@@ -19,7 +19,7 @@ def upload_to_drive(file_path):
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\credentials.json", SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
             creds = flow.run_local_server(port=0)
 
         with open(Ftoken, 'w') as token:
