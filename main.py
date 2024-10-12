@@ -135,4 +135,4 @@ def handle_get_sugestoes(content):
     print(sugestoes_response)
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host="127.0.0.1", port=5000)
+    socketio.run(app)
