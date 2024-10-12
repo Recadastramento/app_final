@@ -26,7 +26,7 @@ def confirmando(dados, link, quem_cadastrou):
     RANGE_NAME = "Dados!A1:AY3000"
 
     creds = None
-    Stoken = "C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\Stoken.json"
+    Stoken = "Stoken.json"
 
     if os.path.exists(Stoken):
         creds = Credentials.from_authorized_user_file(Stoken, SCOPES)
@@ -35,7 +35,7 @@ def confirmando(dados, link, quem_cadastrou):
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\credentials.json", SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
             creds = flow.run_local_server(port=0)
 
         with open(Stoken, "w") as token:
