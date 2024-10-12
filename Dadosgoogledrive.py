@@ -9,9 +9,9 @@ app = Flask(__name__)
 CadastroPIB = pd.DataFrame() 
 
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-CLIENT_SECRET_FILE = "C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\credentials.json"
+CLIENT_SECRET_FILE = "credentials.json"
 
-Dtoken = "C:\\Users\\roger\\OneDrive\\Área de Trabalho\\recadastramento\\Tokens\\Dtoken.json"
+Dtoken = "Dtoken.json"
 
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
